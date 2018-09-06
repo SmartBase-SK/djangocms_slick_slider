@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, division
 
-from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
-
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 from .admin import SlickerSliderAceMixin
 from .forms import SlickSliderForm
@@ -13,8 +12,7 @@ from .helpers import get_slider_image_dimensions
 from .models import SlickSlider, SlickSliderImage
 
 
-
-class SlickSliderImageInline(admin.TabularInline):
+class SlickSliderImageInline(admin.StackedInline):
     model = SlickSliderImage
     extra = 1
 
