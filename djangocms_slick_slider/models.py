@@ -79,9 +79,12 @@ class SlickSliderImage(models.Model):
         related_name='slider_images_filer'
     )
 
-    link = models.URLField(
+    link = models.CharField(
         verbose_name=_('image link'),
-        null=True, blank=True)
+        max_length=255,
+        null=True,
+        blank=True,
+    )
 
     caption_text = models.CharField(
         _('caption text'),
